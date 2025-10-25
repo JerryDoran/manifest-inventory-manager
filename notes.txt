@@ -1,0 +1,2 @@
+Stack Auth Setup:
+  - terminal command <pnpx @stackframe/init-stack . --no browser>
