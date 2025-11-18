@@ -20,15 +20,6 @@ export async function getLowStockProducts(userId: string) {
   return lowStockProducts;
 }
 
-export async function getRecentProducts(userId: string) {
-  const products = await prisma.product.findMany({
-    where: { userId },
-    take: 5,
-    orderBy: { createdAt: 'desc' },
-  });
-  return products;
-}
-
 export async function getAllProducts(userId: string) {
   const products = await prisma.product.findMany({
     where: { userId },
@@ -38,6 +29,15 @@ export async function getAllProducts(userId: string) {
       quantity: true,
       createdAt: true,
     },
+    orderBy: { createdAt: 'desc' },
+  });
+  return products;
+}
+
+export async function getRecentProducts(userId: string) {
+  const products = await prisma.product.findMany({
+    where: { userId },
+    take: 5,
     orderBy: { createdAt: 'desc' },
   });
   return products;
