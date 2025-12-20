@@ -1,4 +1,5 @@
 import KeyMetrics from '@/components/dashboard/key-metrics';
+import ProductsPerWeek from '@/components/dashboard/products-per-week';
 import StockLevels from '@/components/dashboard/stock-levels';
 import Sidebar from '@/components/sidebar';
 import {
@@ -47,13 +48,15 @@ export default async function DashboardPage() {
         </div>
 
         {/* Key Metrics */}
-        <KeyMetrics
-          totalProducts={totalProducts}
-          totalValue={totalValue}
-          lowStockProducts={lowStockProducts}
-        />
-
-        <StockLevels recentProducts={recentProducts} />
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+          <KeyMetrics
+            totalProducts={totalProducts}
+            totalValue={totalValue}
+            lowStockProducts={lowStockProducts}
+          />
+          <ProductsPerWeek allProducts={allProducts} />
+          <StockLevels recentProducts={recentProducts} />
+        </div>
       </main>
     </div>
   );
