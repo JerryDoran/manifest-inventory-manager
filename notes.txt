@@ -1,2 +1,5 @@
+Pedro Tech
+Youtube Url: https://www.youtube.com/watch?v=L5CsIkO5xv4&t=5926s
+
 Stack Auth Setup:
   - terminal command <pnpx @stackframe/init-stack . --no browser>

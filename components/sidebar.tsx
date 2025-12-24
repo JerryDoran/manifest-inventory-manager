@@ -9,7 +9,7 @@ export default function Sidebar({
 }) {
   const navItems = [
     { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
-    { name: 'Products', href: '/products', icon: Package },
+    { name: 'Inventory', href: '/inventory', icon: Package },
     { name: 'Add Product', href: '/product/new', icon: Plus },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];

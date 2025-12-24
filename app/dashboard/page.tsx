@@ -1,4 +1,5 @@
 import KeyMetrics from '@/components/dashboard/key-metrics';
+import ProductEfficiency from '@/components/dashboard/product-efficiency';
 import ProductsPerWeek from '@/components/dashboard/products-per-week';
 import StockLevels from '@/components/dashboard/stock-levels';
 import Sidebar from '@/components/sidebar';
@@ -31,6 +32,28 @@ export default async function DashboardPage() {
     0
   );
 
+  const inStockCount = allProducts.filter(
+    (product) => Number(product.quantity) > 5
+  ).length;
+
+  const lowStockCount = allProducts.filter(
+    (product) => Number(product.quantity) <= 5 && Number(product.quantity) >= 1
+  ).length;
+
+  const outOfStockCount = allProducts.filter(
+    (product) => Number(product.quantity) === 0
+  ).length;
+
+  // Calculate inStockPercentage
+  const inStockPercentage =
+    totalProducts > 0 ? Math.round((inStockCount / totalProducts) * 100) : 0;
+
+  const lowStockPercentage =
+    totalProducts > 0 ? Math.round((lowStockCount / totalProducts) * 100) : 0;
+
+  const outOfStockPercentage =
+    totalProducts > 0 ? Math.round((outOfStockCount / totalProducts) * 100) : 0;
+
   return (
     <div className='min-h-screen'>
       <Sidebar currentPath='/dashboard' />
@@ -54,8 +77,13 @@ export default async function DashboardPage() {
             totalValue={totalValue}
             lowStockProducts={lowStockProducts}
           />
-          <ProductsPerWeek allProducts={allProducts} />
+          <ProductsPerWeek />
           <StockLevels recentProducts={recentProducts} />
+          <ProductEfficiency
+            inStockPercentage={inStockPercentage}
+            lowStockPercentage={lowStockPercentage}
+            outOfStockPercentage={outOfStockPercentage}
+          />
         </div>
       </main>
     </div>

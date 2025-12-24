@@ -32,8 +32,6 @@ export default function StockLevels({
   console.log(recentProducts);
   return (
     <div className='bg-zinc-900 rounded-lg p-6'>
-      {/* STOCK LEVELS */}
-      {/* <div className=''> */}
       <div className='flex items-center justify-between mb-6'>
         <h2 className='text-xl font-semibold text-gray-300 mb-4'>
           Stock Levels
@@ -69,17 +67,10 @@ export default function StockLevels({
                   {product.quantity} units
                 </span>
               </div>
-
-              {/* <div className='flex items-center'>
-                <span className='text-sm text-gray-400 mr-2'>
-                  ${product.price.toFixed(2)}
-                </span>
-              </div> */}
             </div>
           );
         })}
       </div>
-      {/* </div> */}
     </div>
   );
 }

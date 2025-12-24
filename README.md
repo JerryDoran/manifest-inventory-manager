@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manifest Inventory Management
 
-## Getting Started
+This is a Next.js application named "Manifest Inventory Management".
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Purpose:** Keep track of product inventory
+- **Technologies:** Next.js, React, TypeScript, PostgreSQL, Prisma, Tailwind CSS.
+- **Package Manager:** pnpm
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Building and Running
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To install the necessary dependencies, run the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm install
+```
 
-## Deploy on Vercel
+After installation, the `postinstall` script will automatically run `prisma generate` to generate the Prisma client.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Seeding the Database
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To seed the database, run the following command:
+
+```bash
+pnpm prisma db seed
+```
+
+### Development Server
+
+To run the development server, which will host the application at `http://localhost:3000`, use the following command:
+
+```bash
+pnpm run dev
+```
+
+### Building for Production
+
+To build the application for a production environment, use the following command:
+
+```bash
+pnpm run build
+```
+
+### Running in Production
+
+To run the application in production mode, use the following command:
+
+```bash
+pnpm run start
+```
+
+### Linting
+
+
+
+To run the linter, use the following command:
+
+
+
+```bash
+
+pnpm run lint
+
+```
