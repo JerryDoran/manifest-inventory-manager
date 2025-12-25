@@ -35,6 +35,9 @@ dependencies:
   recharts:
     specifier: ^3.6.0
     version: 3.6.0(@types/react@19.2.2)(react-dom@19.1.0)(react-is@16.13.1)(react@19.1.0)(redux@5.0.1)
+  zod:
+    specifier: ^4.2.1
+    version: 4.2.1
 
 devDependencies:
   '@tailwindcss/postcss':
@@ -5059,8 +5062,8 @@ packages:
       '@babel/parser': 7.28.5
       eslint: 9.38.0
       hermes-parser: 0.25.1
-      zod: 4.1.12
-      zod-validation-error: 4.0.2(zod@4.1.12)
+      zod: 4.2.1
+      zod-validation-error: 4.0.2(zod@4.2.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7737,15 +7740,14 @@ packages:
     dependencies:
       grammex: 3.1.12
 
-  /zod-validation-error@4.0.2(zod@4.1.12):
+  /zod-validation-error@4.0.2(zod@4.2.1):
     resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
     dependencies:
-      zod: 4.1.12
+      zod: 4.2.1
     dev: true
 
-  /zod@4.1.12:
-    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
-    dev: true
+  /zod@4.2.1:
+    resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
