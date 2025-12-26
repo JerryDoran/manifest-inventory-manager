@@ -37,8 +37,6 @@ export async function addProduct(formData: FormData) {
     lowStockAt: formData.get('lowStockAt'),
   });
 
-  console.log('PARSED DATA:', parsedData);
-
   if (!parsedData.success) {
     const errorMessages = parsedData.error.issues
       .map((issue) => issue.message)
@@ -53,9 +51,9 @@ export async function addProduct(formData: FormData) {
         userId: user.id,
       },
     });
-    redirect('/inventory');
   } catch (error) {
     console.error(error);
     throw error;
   }
+  redirect('/inventory');
 }

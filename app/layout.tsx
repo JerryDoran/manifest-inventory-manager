@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { StackProvider, StackTheme } from '@stackframe/stack';
 import { stackClientApp } from '../stack/client';
 import { Geist, Geist_Mono } from 'next/font/google';
-// @ts-expect-error - allow importing CSS as a side-effect in Next.js with TypeScript
+
 import './globals.css';
 
 const geistSans = Geist({
