@@ -24,18 +24,17 @@ export default async function InventoryPage({
   const pageSize = 8;
   const currentPage = Math.max(1, Number(params.page ?? 1));
 
-  const where = {
-    ...(q ? { name: { contains: q, mode: 'insensitive' } } : {}),
-  };
+  // const where = {
+  //   ...(q ? { name: { contains: q, mode: 'insensitive' } } : {}),
+  // };
 
   // const totalProducts = await prisma.product.findMany({
   //   where,
   // });
 
   const [totalProductCount, items] = await Promise.all([
-    prisma.product.count({ where }),
+    prisma.product.count(),
     prisma.product.findMany({
-      where,
       orderBy: {
         createdAt: 'desc',
       },
