@@ -19,19 +19,18 @@ export default async function InventoryPage({
   const q = params?.q?.trim() || '';
   const page = params?.page ? Number(params.page) : 1;
 
-  const user = await getCurrentUser();
-  const userId = user.id;
+  // const user = await getCurrentUser();
+  // const userId = user.id;
   const pageSize = 8;
   const currentPage = Math.max(1, Number(params.page ?? 1));
 
   const where = {
-    userId,
-    ...(q ? { contains: q, mode: 'insensitive' } : {}),
+    ...(q ? { name: { contains: q, mode: 'insensitive' } } : {}),
   };
 
-  const totalProducts = await prisma.product.findMany({
-    where,
-  });
+  // const totalProducts = await prisma.product.findMany({
+  //   where,
+  // });
 
   const [totalProductCount, items] = await Promise.all([
     prisma.product.count({ where }),

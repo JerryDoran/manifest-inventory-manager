@@ -9,21 +9,21 @@ import {
   getRecentProducts,
   getTotalProducts,
 } from '@/data/inventory';
-import { getCurrentUser } from '@/lib/auth';
+// import { getCurrentUser } from '@/lib/auth';
 
 export default async function DashboardPage() {
-  const user = await getCurrentUser();
-  const userId = user.id;
+  // const user = await getCurrentUser();
+  // const userId = user.id;
 
   const [totalProducts, lowStockProducts, allProducts] = await Promise.all([
-    getTotalProducts(userId),
-    getLowStockProducts(userId),
-    getAllProducts(userId),
+    getTotalProducts(),
+    getLowStockProducts(),
+    getAllProducts(),
   ]);
 
   // const totalProducts = await getTotalProducts(userId);
   // const lowStockProducts = await getLowStockProducts(userId);
-  const recentProducts = await getRecentProducts(userId);
+  const recentProducts = await getRecentProducts();
 
   // const allProducts = await getAllProducts(userId);
 

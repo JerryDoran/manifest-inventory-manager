@@ -2,7 +2,7 @@ import { Decimal } from '@/prisma/generated/prisma/internal/prismaNamespace';
 
 type StockLevelsProps = {
   id: string;
-  userId: string;
+  // userId: string;
   name: string;
   sku: string | null;
   price: Decimal;
@@ -14,7 +14,7 @@ type StockLevelsProps = {
 
 type Product = {
   id: string;
-  userId: string;
+  // userId: string;
   name: string;
   sku: string | null;
   price: Decimal;

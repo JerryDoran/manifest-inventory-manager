@@ -1,12 +1,12 @@
 import ProductsChart from '@/components/dashboard/products-chart';
 import { getAllProducts } from '@/data/inventory';
-import { getCurrentUser } from '@/lib/auth';
+// import { getCurrentUser } from '@/lib/auth';
 
 export default async function ProductsPerWeek() {
-  const user = await getCurrentUser();
-  const userId = user.id;
+  // const user = await getCurrentUser();
+  // const userId = user.id;
 
-  const allProducts = await getAllProducts(userId);
+  const allProducts = await getAllProducts();
 
   const now = new Date();
   const weeklyProductsData = [];

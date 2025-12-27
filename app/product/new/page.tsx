@@ -1,5 +1,5 @@
-import { getCurrentUser } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+// import { getCurrentUser } from '@/lib/auth';
+// import { redirect } from 'next/navigation';
 
 import Sidebar from '@/components/sidebar';
 import { Plus } from 'lucide-react';
@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { addProduct } from '@/actions/products';
 
 export default async function AddProductPage() {
-  const user = await getCurrentUser();
-  if (!user) {
-    redirect('/login');
-  }
+  // const user = await getCurrentUser();
+  // if (!user) {
+  //   redirect('/login');
+  // }
   return (
     <div className='min-h-dvh'>
       <Sidebar currentPath='/product/new' />

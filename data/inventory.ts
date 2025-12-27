@@ -1,16 +1,16 @@
 import prisma from '@/lib/prisma';
 
-export async function getTotalProducts(userId: string) {
+export async function getTotalProducts() {
   const totalProducts = await prisma.product.count({
-    where: { userId },
+    // where: { userId },
   });
   return totalProducts;
 }
 
-export async function getLowStockProducts(userId: string) {
+export async function getLowStockProducts() {
   const lowStockProducts = await prisma.product.count({
     where: {
-      userId: userId,
+      // userId: userId,
       lowStockAt: { not: null },
       quantity: {
         lte: prisma.product.fields.lowStockAt,
@@ -20,9 +20,9 @@ export async function getLowStockProducts(userId: string) {
   return lowStockProducts;
 }
 
-export async function getAllProducts(userId: string) {
+export async function getAllProducts() {
   const products = await prisma.product.findMany({
-    where: { userId },
+    // where: { userId },
     select: {
       id: true,
       price: true,
@@ -34,20 +34,19 @@ export async function getAllProducts(userId: string) {
   return products;
 }
 
-export async function getRecentProducts(userId: string) {
+export async function getRecentProducts() {
   const products = await prisma.product.findMany({
-    where: { userId },
     take: 5,
     orderBy: { createdAt: 'desc' },
   });
   return products;
 }
 
-export async function getProductById(userId: string, productId: string) {
+export async function getProductById(productId: string) {
   const product = await prisma.product.findFirst({
     where: {
       id: productId,
-      userId: userId,
+      // userId: userId,
     },
   });
   return product;

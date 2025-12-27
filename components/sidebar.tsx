@@ -1,5 +1,5 @@
-import { UserButton } from '@stackframe/stack';
-import { BarChart3, Package, Plus, Settings } from 'lucide-react';
+// import { UserButton } from '@stackframe/stack';
+import { BarChart3, Package, Plus } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Sidebar({
@@ -11,7 +11,7 @@ export default function Sidebar({
     { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
     { name: 'Inventory', href: '/inventory', icon: Package },
     { name: 'Add Product', href: '/product/new', icon: Plus },
-    { name: 'Settings', href: '/settings', icon: Settings },
+    // { name: 'Settings', href: '/settings', icon: Settings },
   ];
 
   return (
@@ -52,11 +52,11 @@ export default function Sidebar({
           );
         })}
       </nav>
-      <div className='absolute bottom-0 right-0 left-0 p-6 border-t border-gray-800'>
+      {/* <div className='absolute bottom-0 right-0 left-0 p-6 border-t border-gray-800'>
         <div className='flex items-center justify-between'>
           <UserButton showUserInfo />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

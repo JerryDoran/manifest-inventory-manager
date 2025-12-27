@@ -9,7 +9,7 @@ datasource db {
 
 model Product {
   id         String  @id @default(cuid())
-  userId     String // Stack Auth User ID
+  // userId     String // Stack Auth User ID
   name       String
   sku        String?
   price      Decimal @db.Decimal(12, 2)
@@ -19,6 +19,6 @@ model Product {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([userId, name])
+  // @@index([userId, name])
   @@index([createdAt])
 }
